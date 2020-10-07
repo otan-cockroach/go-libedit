@@ -1,0 +1,17 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "libedit_other",
+    srcs = ["editline_other.go"],
+    importpath = "",
+    visibility = ["//visibility:public"],
+    deps = ["@com_github_knz_go_libedit//common:go_default_library"],
+)
+
+go_library(
+    name = "other",
+    srcs = ["editline_other.go"],
+    importpath = "github.com/knz/go-libedit/other",
+    visibility = ["//visibility:public"],
+    deps = ["//common"],
+)
